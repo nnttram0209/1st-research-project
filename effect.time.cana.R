@@ -40,7 +40,7 @@ for (i in 1:nrow(a1c.set)) {
      #The approx function returns a list, and we only need the interpolation of y to calculate RMSE, 
      #which is the second element in this list, so the line below is to get the interpolated y
      a1c.itpl.y <- a1c.itpl.dt[[2]]
-     a1c.rmse <- sqrt((mean(effect.dt$a1c.diff - a1c.itpl.y))^2)
+     a1c.rmse <- sqrt(mean((effect.dt$a1c.diff - a1c.itpl.y)^2))
      a1c.set$rmse[i] <- a1c.rmse
 }
 
@@ -54,7 +54,7 @@ for (j in 1:nrow(sbp.set)) {
      #The approx function returns a list, and we only need the interpolation of y to calculate RMSE, 
      #which is the second element in this list, so the line below is to get the interpolated y
      sbp.itpl.y <- sbp.itpl.dt[[2]]
-     sbp.rmse <- sqrt((mean(effect.dt$sbp.diff - sbp.itpl.y))^2)
+     sbp.rmse <- sqrt(mean((effect.dt$sbp.diff - sbp.itpl.y)^2))
      sbp.set$rmse[j] <- sbp.rmse
 }
 
